@@ -1,4 +1,5 @@
 h2,
+h3,
 h4,
 p,
 input,
@@ -7,6 +8,7 @@ button {
 }
 
 h2,
+h3,
 h4,
 p {
   margin: 10px 0px;
@@ -17,7 +19,6 @@ body {
 }
 
 .page {
-  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 4fr;
@@ -132,4 +133,116 @@ body {
 
 .content-area {
   grid-area: 2 / 2 / -1 / -1;
+  background-color: rgba(7, 46, 124, 0.1);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto;
+  gap: 30px;
+  padding: 20px;
+}
+
+.content-area .your-projects {
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px repeat(3, 1fr);
+  gap: 20px;
+}
+
+.content-area .your-projects h3 {
+  grid-row: span 1;
+  grid-column: span 2;
+  align-self: self-end;
+}
+
+.content-area .your-projects .project-card {
+  padding: 20px 20px 20px 40px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(151, 151, 151, 0.4);
+  background: linear-gradient(
+    to right,
+    rgb(252, 213, 53) 0% 3%,
+    rgb(255, 255, 255) 3% 100%
+  );
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40px auto 40px;
+}
+
+.content-area .your-projects .project-card p {
+  color: rgb(116, 116, 116);
+}
+
+.content-area .your-projects .project-card .project-icons {
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  color: rgb(53, 50, 50);
+}
+
+.content-area .side-info {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  grid-template-rows: 50px 1fr 50px 1fr;
+}
+
+.content-area .side-info .side-card {
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(151, 151, 151, 0.4);
+  background-color: white;
+  padding: 20px;
+}
+
+.content-area .side-info h3 {
+  align-self: self-end;
+}
+
+.content-area .announcements {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.content-area .announcements p {
+  color: rgb(116, 116, 116);
+}
+
+.content-area .announcements div:not(:last-child) {
+  border-bottom: 1px solid rgba(119, 119, 119, 0.4);
+}
+
+.content-area .trending {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.content-area .trending-account {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 5px;
+}
+
+.content-area .trending-account h4 {
+  align-self: self-end;
+  margin: 0px;
+}
+
+.content-area .trending p {
+  align-self: self-start;
+  margin: 0px;
+}
+
+.content-area .trending-account img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  grid-area: 1 / 1 / -1 / 2;
+  justify-self: end;
 }
